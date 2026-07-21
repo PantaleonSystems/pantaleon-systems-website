@@ -1,0 +1,40 @@
+:root {
+  /* Marca */
+  --purple-deep: #241033;   /* fundos escuros, títulos premium, botão primário */
+  --purple-royal: #4B1E73;  /* hover, links destacados, ícones */
+  --gold-khipu: #C89B3C;    /* acentos, linhas, nós, bordas de foco, CTAs especiais */
+  --gold-soft: #E7C879;     /* acento sobre fundo escuro, detalhes suaves */
+
+  /* Neutros */
+  --bg-ivory: #F7F3EA;      /* fundo principal claro */
+  --bg-warm: #FFFDF8;       /* cards, seções claras internas */
+  --text-primary: #1D1D1F;  /* texto principal */
+  --text-secondary: #5F5A66;/* texto secundário, descrições */
+  --border: #DDD4C4;        /* bordas, divisórias */
+
+  /* Funcionais (estados) */
+  --success: #2E7D5B;       /* "Hoje" / valid state */
+  --warning: #B8872E;       /* "Próximo" / pending / status em desenvolvimento */
+  --info: #3A6D8C;          /* "Futuro" / system / status núcleo P&D */
+
+  /* Tipografia */
+  --font-display: "Space Grotesk", sans-serif;  /* títulos, números, headings */
+  --font-body: "Inter", sans-serif;             /* corpo, menus, botões */
+  --font-mono: "IBM Plex Mono", monospace;      /* eyebrows, labels técnicos, metadados */
+
+  /* Raios */
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
+
+  /* Sombras */
+  --shadow-soft: 0 18px 60px rgba(36,16,51,0.08);
+  --shadow-card: 0 10px 30px rgba(36,16,51,0.06);
+
+  /* Movimento */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Layout */
+  --maxw: 1200px;
+}

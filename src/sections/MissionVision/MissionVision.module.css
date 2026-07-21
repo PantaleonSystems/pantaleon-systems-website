@@ -1,0 +1,84 @@
+.mvGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 8px;
+}
+
+.mvLabel {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-khipu);
+  margin-bottom: 14px;
+}
+
+.mvGrid h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.mvGrid p {
+  color: var(--text-secondary);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.principles {
+  margin-top: 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  background: var(--bg-ivory);
+  padding: 34px;
+}
+
+.principlesLabel {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-khipu);
+  margin-bottom: 20px;
+}
+
+.principlesList {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+}
+
+.principle {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pn {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--gold-khipu);
+}
+
+.principle p {
+  font-size: 14.5px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+@media (max-width: 960px) {
+  .mvGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .principlesList {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .principlesList {
+    grid-template-columns: 1fr;
+  }
+}

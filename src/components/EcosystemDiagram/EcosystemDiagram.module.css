@@ -1,0 +1,92 @@
+.map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  margin-top: 16px;
+}
+
+.node {
+  width: 100%;
+  max-width: 640px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-warm);
+  padding: 24px 30px;
+  text-align: center;
+  transition: all 0.3s var(--ease);
+}
+
+.node:hover {
+  border-color: rgba(200, 155, 60, 0.5);
+  box-shadow: var(--shadow-card);
+}
+
+.root {
+  background: var(--purple-deep);
+  color: var(--bg-warm);
+  border-color: var(--purple-deep);
+  max-width: 680px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.root .title {
+  color: var(--bg-warm);
+}
+
+.role {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+}
+
+.root .role {
+  color: var(--gold-soft);
+}
+
+.connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--text-secondary);
+  padding: 9px 0;
+}
+
+.connectorLine {
+  width: 1px;
+  height: 20px;
+  background: var(--gold-khipu);
+  opacity: 0.5;
+}
+
+.verb {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-khipu);
+  padding: 5px 0;
+}
+
+.leafRow {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 680px;
+}
+
+.leaf {
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-pill);
+  padding: 10px 20px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  background: var(--bg-warm);
+}

@@ -1,0 +1,30 @@
+.khipu {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.high {
+  opacity: 0.9;
+  z-index: 0;
+}
+
+.low {
+  opacity: 0.4;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.pulse {
+  animation-name: pulse;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}

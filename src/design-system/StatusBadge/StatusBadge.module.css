@@ -1,0 +1,22 @@
+.status {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid;
+  white-space: nowrap;
+}
+
+.dev {
+  color: var(--warning);
+  border-color: rgba(184, 135, 46, 0.4);
+  background: rgba(184, 135, 46, 0.06);
+}
+
+.rnd {
+  color: var(--info);
+  border-color: rgba(58, 109, 140, 0.4);
+  background: rgba(58, 109, 140, 0.06);
+}

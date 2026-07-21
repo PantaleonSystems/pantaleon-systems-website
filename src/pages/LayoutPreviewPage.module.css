@@ -1,0 +1,61 @@
+/* TEMPORÁRIO — página de revisão visual da etapa 4A. Remover junto com
+   LayoutPreviewPage.tsx e a rota /_layout-test quando Header/Footer/
+   KhipuLines forem aprovados. */
+
+.spacer {
+  padding: 140px 32px 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.khipuBlock {
+  position: relative;
+  height: 360px;
+  margin: 40px 0;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.khipuBlock.light {
+  background: var(--bg-ivory);
+  border: 1px solid var(--border);
+}
+
+.khipuBlock.dark {
+  background: var(--purple-deep);
+}
+
+.khipuLabel {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.khipuBlock.dark .khipuLabel {
+  color: var(--gold-soft);
+}
+
+.tallSpacer {
+  height: 900px;
+}
+
+.demoBlock {
+  margin: 56px 0;
+}
+
+.demoLabel {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+

@@ -1,0 +1,26 @@
+.card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 34px;
+  transition: all 0.32s var(--ease);
+}
+
+.ivory {
+  background: var(--bg-ivory);
+}
+
+.warm {
+  background: var(--bg-warm);
+}
+
+.dark {
+  background: var(--purple-deep);
+  color: var(--bg-warm);
+  border-color: var(--purple-deep);
+}
+
+.hover:hover {
+  transform: translateY(-4px);
+  border-color: rgba(200, 155, 60, 0.55);
+  box-shadow: var(--shadow-soft);
+}
