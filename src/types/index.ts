@@ -57,3 +57,14 @@ export interface ComparisonColumn {
   title: string
   items: string[]
 }
+
+export interface WhyItMattersItem {
+  title: string
+  description: string
+}
+
+export interface ResearchBlock {
+  n: string
+  title: string
+  description: string
+}
