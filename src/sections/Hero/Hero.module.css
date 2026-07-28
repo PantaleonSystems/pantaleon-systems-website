@@ -1,5 +1,9 @@
 .hero {
-  padding: 180px 0 110px;
+  /* clamp por vh, não só um valor fixo: em janelas de altura comum
+     (laptop, ~700-850px úteis) o padding original (180/110, extraído do
+     protótipo) empurrava o CTA para fora da viewport inicial. Em telas
+     altas o clamp ainda resolve para os mesmos 180/110 do protótipo. */
+  padding: clamp(96px, 16vh, 180px) 0 clamp(56px, 9vh, 110px);
   overflow: hidden;
 }
 
@@ -27,7 +31,7 @@
   font-size: clamp(17px, 1.7vw, 20px);
   color: var(--text-secondary);
   max-width: 600px;
-  margin: 26px 0 36px;
+  margin: 20px 0 28px;
   line-height: 1.6;
 }
 
@@ -38,8 +42,8 @@
 }
 
 .micro {
-  margin-top: 48px;
-  padding-top: 24px;
+  margin-top: 32px;
+  padding-top: 20px;
   border-top: 1px solid var(--border);
   font-family: var(--font-display);
   font-weight: 500;
