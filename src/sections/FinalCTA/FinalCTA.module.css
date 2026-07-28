@@ -1,0 +1,27 @@
+.finalcta {
+  text-align: center;
+}
+
+.inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: clamp(30px, 4.5vw, 48px);
+  font-weight: 600;
+}
+
+.inner p {
+  color: var(--text-secondary);
+  font-size: 19px;
+  margin: 22px auto 40px;
+  max-width: 600px;
+}
+
+.btns {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}

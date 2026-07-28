@@ -1,0 +1,40 @@
+.manifesto {
+  background: var(--purple-deep);
+  color: var(--bg-warm);
+  overflow: hidden;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+}
+
+.title {
+  font-size: clamp(30px, 4.5vw, 48px);
+  font-weight: 600;
+  margin: 22px 0 30px;
+  max-width: 820px;
+}
+
+.content p {
+  font-size: 19px;
+  color: rgba(255, 253, 248, 0.78);
+  max-width: 720px;
+  margin-bottom: 20px;
+  line-height: 1.65;
+}
+
+.content .impact {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(22px, 3vw, 30px);
+  color: var(--bg-warm);
+  max-width: 840px;
+  margin-top: 16px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.gold {
+  color: var(--gold-soft);
+}

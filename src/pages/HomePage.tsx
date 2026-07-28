@@ -1,7 +1,11 @@
 import {
+  BuildStatus,
+  Community,
   Ecosystem,
+  FinalCTA,
   Hero,
   Leadership,
+  Manifesto,
   MissionVision,
   Projects,
   Research,
@@ -22,6 +26,10 @@ export default function HomePage() {
       <Projects />
       <Leadership />
       <Research />
+      <BuildStatus />
+      <Manifesto />
+      <Community />
+      <FinalCTA />
     </>
   )
 }

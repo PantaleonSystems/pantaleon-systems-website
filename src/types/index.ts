@@ -68,3 +68,23 @@ export interface ResearchBlock {
   title: string
   description: string
 }
+
+export type BuildStage = 'now' | 'next' | 'future'
+
+export interface BuildStatusItem {
+  stage: BuildStage
+  label: string
+  description: string
+}
+
+export interface CommunityCard {
+  title: string
+  description: string
+  ctaLabel: string
+}
+
+export interface CommunityChannel {
+  label: string
+  href: string
+  soon?: boolean
+}
