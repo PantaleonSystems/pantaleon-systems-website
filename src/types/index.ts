@@ -39,6 +39,8 @@ export interface Leader {
   bio: string
   /** URL resolvida do import da foto em src/assets */
   photo: string
+  /** parágrafos da bio expandida (usada em /sobre) */
+  bioLong: string[]
 }
 
 export interface Principle {
@@ -87,4 +89,30 @@ export interface CommunityChannel {
   label: string
   href: string
   soon?: boolean
+}
+
+/** bloco de texto com título — usado nas páginas internas */
+export interface TextBlock {
+  title: string
+  paragraphs: string[]
+}
+
+export interface ProjectPageContent {
+  slug: string
+  /** frase de abertura do hero da página */
+  lead: string
+  whatIsIt: TextBlock
+  why: TextBlock
+  relation: TextBlock
+  /** estágio real do projeto, na mesma estrutura do BuildStatus da Home */
+  stage: BuildStatusItem[]
+  follow: TextBlock
+  /** aviso exibido em destaque (ex.: restrição jurídica do Khipu) */
+  notice?: string
+}
+
+export interface TimelineItem {
+  label: string
+  title: string
+  description: string
 }
