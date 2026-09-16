@@ -1,3 +1,5 @@
+import { ProjectPage } from './ProjectPage'
+
 export default function UsfEnginePage() {
-  return <div>UsfEnginePage</div>;
+  return <ProjectPage slug="usf-engine" />
 }

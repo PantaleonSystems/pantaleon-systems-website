@@ -1,3 +1,5 @@
+import { ProjectPage } from './ProjectPage'
+
 export default function KhipuPage() {
-  return <div>KhipuPage</div>;
+  return <ProjectPage slug="khipu" />
 }

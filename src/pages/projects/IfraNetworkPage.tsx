@@ -1,3 +1,5 @@
+import { ProjectPage } from './ProjectPage'
+
 export default function IfraNetworkPage() {
-  return <div>IfraNetworkPage</div>;
+  return <ProjectPage slug="ifra-network" />
 }

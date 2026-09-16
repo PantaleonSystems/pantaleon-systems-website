@@ -8,9 +8,11 @@
 .inner {
   position: relative;
   z-index: 2;
+}
+
+.titleRow,
+.lead {
   max-width: 860px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .titleRow {

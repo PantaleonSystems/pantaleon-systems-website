@@ -13,8 +13,11 @@ import {
   Web3ToWeb4,
   WhyItMatters,
 } from '../sections'
+import { useDocumentTitle } from '../hooks'
 
 export default function HomePage() {
+  useDocumentTitle()
+
   return (
     <>
       <Hero />
