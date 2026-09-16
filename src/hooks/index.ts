@@ -1,2 +1,3 @@
-// Barrel export — populado nas próximas etapas
-export {};
+export { useScrollReveal } from './useScrollReveal'
+export { useHeaderScroll } from './useHeaderScroll'
+export { useDocumentTitle } from './useDocumentTitle'

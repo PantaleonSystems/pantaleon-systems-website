@@ -22,3 +22,8 @@ export type { TransitionPathProps } from './TransitionPath/TransitionPath'
 
 export { EcosystemDiagram } from './EcosystemDiagram/EcosystemDiagram'
 export type { EcosystemDiagramProps } from './EcosystemDiagram/EcosystemDiagram'
+
+export { PageHero } from './PageHero/PageHero'
+export type { PageHeroProps } from './PageHero/PageHero'
+
+export { ScrollManager } from './ScrollManager/ScrollManager'
