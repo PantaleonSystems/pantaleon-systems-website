@@ -8,17 +8,17 @@ export function Hero() {
       <KhipuLines variant="light" density="high" />
       <div className={`wrap ${styles.grid}`}>
         <div>
-          <Eyebrow>Deep tech brasileira · Web4</Eyebrow>
+          <Eyebrow>Deep tech brasileira · Web4 onchain</Eyebrow>
           <h1 className={styles.title}>
-            Construindo a infraestrutura para a{' '}
-            <span className={styles.accent}>Web4</span>: estados, agentes e
-            redes verificáveis
+            A verdadeira Web4 é{' '}
+            <span className={styles.accent}>onchain</span>. Estamos
+            construindo ela.
           </h1>
           <p className={styles.sub}>
-            A Pantaleon Systems é uma deep tech brasileira que pesquisa e
-            desenvolve a infraestrutura por trás de redes capazes de validar
-            dados, ações e estados em ambientes inteligentes e
-            descentralizados.
+            Numa rede de agentes autônomos e decisões automatizadas,
+            registrar não basta — é preciso validar estados, ações e dados
+            onchain. A Pantaleon está construindo essa infraestrutura de
+            confiança.
           </p>
           <div className={styles.ctas}>
             <Button variant="primary" href="#visao" arrow>
