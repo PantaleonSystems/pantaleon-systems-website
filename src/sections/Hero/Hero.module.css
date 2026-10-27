@@ -1,70 +1,142 @@
 .hero {
-  /* clamp por vh, não só um valor fixo: em janelas de altura comum
-     (laptop, ~700-850px úteis) o padding original (180/110, extraído do
-     protótipo) empurrava o CTA para fora da viewport inicial. Em telas
-     altas o clamp ainda resolve para os mesmos 180/110 do protótipo. */
-  padding: clamp(96px, 16vh, 180px) 0 clamp(56px, 9vh, 110px);
+  position: relative;
+  min-height: 100svh;
+  background: var(--purple-deep);
+  color: var(--bg-warm);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: calc(var(--header-h) + 32px) 0 0;
   overflow: hidden;
 }
 
-.grid {
+.copy {
   position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: 1.25fr 0.85fr;
-  gap: 56px;
-  align-items: center;
+  width: 100%;
 }
 
+/* duas linhas em escalas e pesos diferentes: a primeira à esquerda, a segunda à direita */
 .title {
-  font-size: clamp(36px, 5.4vw, 64px);
-  font-weight: 600;
-  line-height: 1.04;
-  margin: 24px 0 0;
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(3.4rem, 17.5vw, 10rem);
+  line-height: 0.98;
+  letter-spacing: -0.06em;
 }
 
-.accent {
-  color: var(--purple-royal);
+.l1 {
+  align-self: flex-start;
+  font-weight: 700;
+}
+
+.l2 {
+  align-self: flex-end;
+  font-weight: 300;
+  color: var(--gold-soft);
+  letter-spacing: -0.07em;
+}
+
+.aside {
+  margin-top: 28px;
+  max-width: 26rem;
 }
 
 .sub {
-  font-size: clamp(17px, 1.7vw, 20px);
-  color: var(--text-secondary);
-  max-width: 600px;
-  margin: 20px 0 28px;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: rgba(255, 253, 248, 0.72);
 }
 
-.ctas {
+.actions {
+  margin-top: 16px;
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
+  gap: 8px;
 }
 
-.micro {
-  margin-top: 32px;
-  padding-top: 20px;
-  border-top: 1px solid var(--border);
-  font-family: var(--font-display);
-  font-weight: 500;
-  font-size: clamp(15px, 1.7vw, 19px);
-  color: var(--purple-deep);
-  letter-spacing: -0.01em;
+.actions > a {
+  padding: 11px 18px;
+  font-size: 0.9rem;
 }
 
-.gold {
-  color: var(--gold-khipu);
-}
+/* tablet: o texto de apoio desce e se alinha à direita, sob a segunda linha */
+@media (min-width: 701px) {
+  .title {
+    font-size: clamp(5.5rem, 13vw, 10rem);
+  }
 
-@media (max-width: 960px) {
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .aside {
+    margin-left: auto;
+    max-width: 29rem;
   }
 }
 
-@media (max-width: 900px) {
+/* telas largas: título um pouco menor para o hero inteiro caber na altura da tela */
+@media (min-width: 1200px) {
+  .title {
+    font-size: clamp(7.5rem, 10.5vw, 9rem);
+  }
+}
+
+.art {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  height: auto;
+  overflow: visible;
+}
+
+.thread {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.end {
+  fill: var(--gold-soft);
+}
+
+.badge {
+  fill: var(--purple-deep);
+  stroke: var(--gold);
+  stroke-width: 1.5;
+}
+
+.glyph {
+  fill: none;
+  stroke: var(--gold-soft);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.spark {
+  fill: var(--gold-soft);
+  filter: drop-shadow(0 0 8px var(--gold-soft));
+  opacity: 0;
+}
+
+.node,
+.thread,
+.spark {
+  will-change: transform;
+}
+
+@media (max-width: 700px) {
   .hero {
-    padding: 140px 0 80px;
+    justify-content: flex-start;
+  }
+  .actions > a {
+    flex: 1 1 100%;
+  }
+  .art {
+    margin-top: 40px;
+    /* no celular o desenho fica mais alto que largo para não virar um fio minúsculo */
+    width: 165%;
+    max-width: none;
+    margin-left: -32%;
   }
 }

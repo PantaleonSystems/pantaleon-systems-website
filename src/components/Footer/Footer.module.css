@@ -1,84 +1,39 @@
 .footer {
   background: var(--purple-deep);
   color: rgba(255, 253, 248, 0.72);
-  padding: 74px 0 34px;
+  padding: 72px 0 36px;
+  font-size: 0.9rem;
+  line-height: 1.7;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr 1fr;
-  gap: 48px;
+.inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
 .brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
   color: var(--bg-warm);
-  font-family: var(--font-display);
   font-weight: 600;
-  font-size: 19px;
-  margin-bottom: 18px;
+  font-size: 1.1rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
 }
 
-.brandLogo {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-}
-
-.about {
-  font-size: 14.5px;
-  line-height: 1.6;
-  max-width: 320px;
-}
-
-.col h5 {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+.company a:hover,
+.legal a:hover {
   color: var(--gold-soft);
-  margin-bottom: 18px;
-  font-weight: 500;
 }
 
-.col a {
-  display: block;
-  font-size: 14.5px;
-  margin-bottom: 11px;
-  transition: color 0.25s var(--ease);
-}
-
-.col a:hover {
-  color: var(--bg-warm);
-}
-
-.bottom {
-  margin-top: 54px;
-  padding-top: 26px;
-  border-top: 1px solid rgba(231, 200, 121, 0.18);
+.legal {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-  font-size: 13px;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.copy {
+  margin-top: 56px;
+  font-size: 0.8rem;
   color: rgba(255, 253, 248, 0.5);
-}
-
-.tagline {
-  font-family: var(--font-mono);
-}
-
-@media (max-width: 900px) {
-  .grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-  }
-}
-
-@media (max-width: 560px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
 }

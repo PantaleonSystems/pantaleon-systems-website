@@ -1,40 +1,34 @@
 :root {
   /* Marca */
-  --purple-deep: #241033;   /* fundos escuros, títulos premium, botão primário */
-  --purple-royal: #4B1E73;  /* hover, links destacados, ícones */
-  --gold-khipu: #C89B3C;    /* acentos, linhas, nós, bordas de foco, CTAs especiais */
-  --gold-soft: #E7C879;     /* acento sobre fundo escuro, detalhes suaves */
+  --purple-deep: #241033;
+  --purple-royal: #4B1E73;
+  --gold: #C89B3C;
+  --gold-soft: #E7C879;
 
   /* Neutros */
-  --bg-ivory: #F7F3EA;      /* fundo principal claro */
-  --bg-warm: #FFFDF8;       /* cards, seções claras internas */
-  --text-primary: #1D1D1F;  /* texto principal */
-  --text-secondary: #5F5A66;/* texto secundário, descrições */
-  --border: #DDD4C4;        /* bordas, divisórias */
+  --bg-ivory: #F7F3EA;
+  --bg-warm: #FFFDF8;
+  --text-primary: #1D1D1F;
+  --text-secondary: #5F5A66;
+  --border: #DDD4C4;
 
-  /* Funcionais (estados) */
-  --success: #2E7D5B;       /* "Hoje" / valid state */
-  --warning: #B8872E;       /* "Próximo" / pending / status em desenvolvimento */
-  --info: #3A6D8C;          /* "Futuro" / system / status núcleo P&D */
+  /* Estados */
+  --success: #2E7D5B;
+  --error: #A8321F;
 
-  /* Tipografia */
-  --font-display: "Space Grotesk", sans-serif;  /* títulos, números, headings */
-  --font-body: "Inter", sans-serif;             /* corpo, menus, botões */
-  --font-mono: "IBM Plex Mono", monospace;      /* eyebrows, labels técnicos, metadados */
+  /* Tipografia: uma única família, hierarquia por tamanho, peso e tracking */
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
 
   /* Raios */
   --radius-md: 12px;
   --radius-lg: 20px;
-  --radius-xl: 24px;
   --radius-pill: 999px;
 
-  /* Sombras */
-  --shadow-soft: 0 18px 60px rgba(36,16,51,0.08);
-  --shadow-card: 0 10px 30px rgba(36,16,51,0.06);
-
-  /* Movimento */
-  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  /* Movimento (espelha src/lib/motion.ts) */
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
 
   /* Layout */
   --maxw: 1200px;
+  --header-h: 64px;
 }

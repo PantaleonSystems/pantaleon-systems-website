@@ -1,0 +1,30 @@
+.section {
+  position: relative;
+  z-index: 1;
+  background: var(--purple-deep);
+  color: var(--bg-warm);
+  padding: clamp(112px, 22vh, 240px) 0;
+}
+
+.inner {
+  display: grid;
+  gap: 32px;
+}
+
+.eyebrow {
+  color: var(--gold-soft);
+}
+
+.title {
+  font-size: clamp(2.5rem, 7.4vw, 6.5rem);
+  max-width: 13ch;
+  letter-spacing: -0.045em;
+}
+
+.text {
+  margin-top: clamp(16px, 4vh, 48px);
+  max-width: 44rem;
+  font-size: clamp(1.2rem, 2.4vw, 1.75rem);
+  line-height: 1.45;
+  letter-spacing: -0.015em;
+}

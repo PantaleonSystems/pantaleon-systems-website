@@ -1,0 +1,48 @@
+.svg {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  overflow: visible;
+}
+
+.line {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+}
+
+.solid {
+  fill: var(--purple-deep);
+  stroke: var(--gold);
+  stroke-width: 1.5;
+}
+
+.hollow {
+  fill: var(--bg-warm);
+  stroke: var(--purple-deep);
+  stroke-width: 1.6;
+}
+
+.dashed {
+  fill: none;
+  stroke: var(--purple-deep);
+  stroke-width: 1.6;
+  stroke-dasharray: 4 5;
+  opacity: 0.7;
+}
+
+.text,
+.textOn {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 600;
+  text-anchor: middle;
+}
+.text { fill: var(--purple-deep); }
+.textOn { fill: var(--bg-warm); }
+
+.dot {
+  fill: var(--gold);
+  opacity: 0;
+}

@@ -1,0 +1,59 @@
+.svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.line {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+}
+
+.solid {
+  fill: var(--purple-deep);
+  stroke: var(--gold);
+  stroke-width: 1.5;
+}
+
+.hollow {
+  fill: var(--bg-warm);
+  stroke: var(--purple-deep);
+  stroke-width: 1.6;
+}
+
+.dashed {
+  fill: none;
+  stroke: var(--purple-deep);
+  stroke-width: 1.6;
+  stroke-dasharray: 4 5;
+  opacity: 0.55;
+}
+
+.bolt {
+  fill: var(--gold-soft);
+}
+
+.tick {
+  fill: none;
+  stroke: var(--purple-royal);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.glyph,
+.glyphOnDark {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+.glyph { stroke: var(--purple-deep); opacity: 0.6; }
+.glyphOnDark { stroke: var(--gold-soft); }
+
+.dot {
+  fill: var(--gold);
+  /* sem JS/movimento: os pontos ficam escondidos, o esquema já está completo */
+  opacity: 0;
+}

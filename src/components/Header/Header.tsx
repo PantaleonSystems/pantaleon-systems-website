@@ -1,106 +1,65 @@
-import { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
-import { Button } from '../../design-system'
-import { useHeaderScroll } from '../../hooks/useHeaderScroll'
+import { useRef } from 'react'
+import { gsap, ScrollTrigger, useGSAP } from '../../lib/gsap'
+import { DUR, EASE, NO_PREF } from '../../lib/motion'
 import { mainNavItems } from '../../data/navigation'
+import { whatsappUrl } from '../../data/contact'
+import { HashLink } from '../HashLink/HashLink'
 import logo from '../../assets/logo.png'
 import styles from './Header.module.css'
 
 export function Header() {
-  const scrolled = useHeaderScroll()
-  const { pathname } = useLocation()
-  const isHome = pathname === '/'
-  const [menuOpen, setMenuOpen] = useState(false)
+  const ref = useRef<HTMLElement>(null)
 
-  const headerClasses = [styles.header, scrolled && styles.scrolled]
-    .filter(Boolean)
-    .join(' ')
-
-  const mobileNavClasses = [styles.mobileNav, menuOpen && styles.open]
-    .filter(Boolean)
-    .join(' ')
+  // Esconde ao rolar para baixo, volta ao rolar para cima (só com movimento permitido).
+  useGSAP(
+    () => {
+      const mm = gsap.matchMedia()
+      mm.add(NO_PREF, () => {
+        const hide = gsap.to(ref.current, {
+          yPercent: -110,
+          duration: DUR.fast,
+          ease: EASE,
+          paused: true,
+        })
+        const trigger = ScrollTrigger.create({
+          start: 0,
+          end: 'max',
+          onUpdate: (self) => {
+            const goingDown = self.direction === 1 && self.scroll() > 120
+            if (goingDown) hide.play()
+            else hide.reverse()
+          },
+        })
+        return () => {
+          trigger.kill()
+          hide.kill()
+        }
+      })
+      return () => mm.revert()
+    },
+    { scope: ref },
+  )
 
   return (
-    <header className={headerClasses}>
+    <header ref={ref} className={styles.header}>
       <div className={`wrap ${styles.nav}`}>
-        {isHome ? (
-          <a href="#top" className={styles.brand}>
-            <img
-              src={logo}
-              alt="Pantaleon Systems"
-              className={styles.brandLogo}
-            />
-            Pantaleon Systems
-          </a>
-        ) : (
-          <Link to="/" className={styles.brand}>
-            <img
-              src={logo}
-              alt="Pantaleon Systems"
-              className={styles.brandLogo}
-            />
-            Pantaleon Systems
-          </Link>
-        )}
+        <HashLink hash="topo" className={styles.brand}>
+          <img src={logo} alt="" className={styles.logo} />
+          <span>Pantaleon Systems</span>
+        </HashLink>
 
-        <nav className={styles.navLinks} aria-label="Navegação principal">
-          {mainNavItems.map((item) =>
-            isHome ? (
-              <a key={item.hash} href={`#${item.hash}`}>
-                {item.label}
-              </a>
-            ) : (
-              <Link key={item.hash} to={`/#${item.hash}`}>
-                {item.label}
-              </Link>
-            ),
-          )}
+        <nav className={styles.links} aria-label="Principal">
+          {mainNavItems.map((item) => (
+            <HashLink key={item.hash} hash={item.hash}>
+              {item.label}
+            </HashLink>
+          ))}
         </nav>
 
-        {isHome ? (
-          <Button variant="primary" href="#contato">
-            Conecte-se
-          </Button>
-        ) : (
-          <Button variant="primary" to="/#contato">
-            Conecte-se
-          </Button>
-        )}
-
-        <button
-          type="button"
-          className={styles.menuBtn}
-          aria-label="Menu"
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen((open) => !open)}
-        >
-          <span />
-          <span />
-          <span />
-        </button>
+        <a className={styles.cta} href={whatsappUrl()} target="_blank" rel="noreferrer">
+          Falar com a gente
+        </a>
       </div>
-
-      <nav className={mobileNavClasses} aria-label="Navegação mobile">
-        {mainNavItems.map((item) =>
-          isHome ? (
-            <a
-              key={item.hash}
-              href={`#${item.hash}`}
-              onClick={() => setMenuOpen(false)}
-            >
-              {item.label}
-            </a>
-          ) : (
-            <Link
-              key={item.hash}
-              to={`/#${item.hash}`}
-              onClick={() => setMenuOpen(false)}
-            >
-              {item.label}
-            </Link>
-          ),
-        )}
-      </nav>
     </header>
   )
 }

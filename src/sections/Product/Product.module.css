@@ -1,0 +1,93 @@
+.section {
+  position: relative;
+  z-index: 1;
+  background: var(--purple-deep);
+  color: var(--bg-warm);
+  padding: clamp(96px, 18vh, 200px) 0;
+  scroll-margin-top: 0;
+}
+
+.inner {
+  display: grid;
+  gap: clamp(72px, 14vh, 160px);
+}
+
+.top {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: clamp(40px, 7vw, 112px);
+  align-items: center;
+}
+
+.copy {
+  display: grid;
+  align-content: start;
+}
+
+.join {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(32px, 6vw, 96px);
+  align-items: start;
+  padding-top: clamp(40px, 8vh, 80px);
+  border-top: 1px solid rgba(231, 200, 121, 0.25);
+}
+
+.joinTitle {
+  font-size: clamp(2rem, 4.4vw, 3.5rem);
+  letter-spacing: -0.045em;
+}
+
+.eyebrow {
+  color: var(--gold-soft);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.badge {
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(231, 200, 121, 0.5);
+  letter-spacing: 0.12em;
+}
+
+.title {
+  margin-top: 24px;
+  font-size: clamp(2.5rem, 6.4vw, 5.5rem);
+  letter-spacing: -0.045em;
+  max-width: 12ch;
+}
+
+.lead {
+  margin-top: 32px;
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  max-width: 32rem;
+  color: rgba(255, 253, 248, 0.86);
+}
+
+.note {
+  margin-top: 20px;
+  max-width: 32rem;
+  color: rgba(255, 253, 248, 0.62);
+}
+
+.founder {
+  margin-top: 20px;
+  max-width: 30rem;
+  color: var(--gold-soft);
+}
+
+.form {
+  position: relative;
+}
+
+@media (max-width: 900px) {
+  .top,
+  .join {
+    grid-template-columns: 1fr;
+  }
+}

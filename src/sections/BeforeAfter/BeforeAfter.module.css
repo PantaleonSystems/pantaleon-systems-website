@@ -1,0 +1,95 @@
+.section {
+  position: relative;
+  z-index: 1;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  background: var(--bg-warm);
+  padding: clamp(72px, 10vh, 120px) 0 clamp(32px, 6vh, 120px);
+}
+
+.inner {
+  width: 100%;
+  display: grid;
+  gap: 20px;
+}
+
+.title {
+  font-size: clamp(2rem, 5.2vw, 4.25rem);
+  max-width: 16ch;
+}
+
+.cols {
+  margin-top: clamp(24px, 5vh, 56px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: clamp(32px, 6vw, 96px);
+  align-items: start;
+}
+
+.label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+}
+
+.steps {
+  list-style: none;
+}
+
+.step {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  padding: clamp(4px, 1vh, 9px) 0;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  letter-spacing: -0.02em;
+}
+
+.strike {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 2px;
+  background: var(--purple-royal);
+}
+
+/* estado final (sem JS/movimento): tudo riscado */
+.step {
+  opacity: 0.35;
+}
+.strike {
+  transform: none;
+}
+
+.auto {
+  padding-left: clamp(0px, 2vw, 32px);
+  border-left: 1px solid var(--gold);
+}
+
+.autoStep {
+  font-size: clamp(1.6rem, 3.6vw, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.autoResult {
+  margin-top: 14px;
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  color: var(--text-secondary);
+  max-width: 24rem;
+}
+
+@media (max-width: 760px) {
+  .cols {
+    grid-template-columns: 1fr;
+  }
+  .auto {
+    padding: 4px 0 0 18px;
+  }
+}

@@ -1,25 +1,23 @@
-import { Button } from '../design-system'
-import { PageHero } from '../components'
+import { buttonClasses } from '../design-system'
 import { useDocumentTitle } from '../hooks'
-import styles from './NotFoundPage.module.css'
+import { HashLink } from '../components/HashLink/HashLink'
+import { Link } from 'react-router-dom'
+import styles from './Page.module.css'
 
 export default function NotFoundPage() {
   useDocumentTitle('Página não encontrada')
 
   return (
-    <PageHero
-      eyebrow="Erro 404"
-      title="Este estado não foi encontrado"
-      lead="A página que você procura não existe ou mudou de endereço. Volte para a Home ou explore os projetos do ecossistema."
-    >
-      <div className={styles.btns}>
-        <Button variant="primary" to="/" arrow>
-          Voltar para a Home
-        </Button>
-        <Button variant="ghost" to="/#projetos">
-          Ver projetos
-        </Button>
-      </div>
-    </PageHero>
+    <div className={`wrap ${styles.page} ${styles.center}`}>
+      <p className={styles.code}>Erro 404</p>
+      <h1 className={styles.title}>Esta página não está aqui.</h1>
+      <p className={styles.intro}>O endereço pode ter mudado ou nunca ter existido.</p>
+      <Link to="/" className={buttonClasses('dark')} data-press>
+        Voltar ao início
+      </Link>
+      <HashLink hash="produto" className={styles.back}>
+        Ou conheça o nosso primeiro produto
+      </HashLink>
+    </div>
   )
 }
