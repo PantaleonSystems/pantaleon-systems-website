@@ -26,7 +26,7 @@ Uma família: **Inter** (400 a 700). Títulos com tracking negativo e entrelinha
 
 - Conceito: **do emaranhado à linha reta**. Hero morfa um traço confuso numa linha dourada reta (MorphSVG); uma linha dourada desce pela página desenhada pela rolagem (DrawSVG).
 - Easing único `expo.out` (`EASE`), sem rebote; durações 0.4 / 0.9 / 1.4 s (`DUR`).
-- Entradas variadas e contidas: títulos por linha com máscara (SplitText), lista com traços que se desenham, palavras que acendem pela rolagem, riscos no Antes/Depois (cena fixa), destaque do passo atual no método.
+- Entradas variadas e contidas: títulos por linha com máscara (SplitText), lista com traços que se desenham, palavras que acendem pela rolagem, fichas riscadas e diagrama que se desenha uma vez no Antes/Depois (sem cena fixa: a rolagem prendia e travava no celular), destaque do passo atual no método.
 - Depois de assentar, o hero fica quase parado: um brilho curto percorre a linha a cada ~11 s.
 - Movimento reduzido: sem ScrollSmoother, sem triggers; a página aparece no estado final. A confirmação do formulário usa um cross-fade curto.
 

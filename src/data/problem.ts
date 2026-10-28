@@ -17,18 +17,13 @@ export const vision = {
 } as const
 
 export const visionGraphic = {
-  tasks: [
-    'copiar',
-    'colar',
-    'digitar de novo',
-    'conferir à mão',
-    'reenviar',
-    'responder igual',
-    'atualizar a planilha',
-    'avisar a equipe',
-    'passar o dado',
+  label:
+    'Esquema: menos tempo em tarefas repetidas libera atenção e controle dos processos, o que leva a mais faturamento.',
+  steps: [
+    { key: 'time', title: 'Tempo', caption: 'Menos horas em tarefas repetidas.' },
+    { key: 'focus', title: 'Atenção', caption: 'Processos sob controle, equipe focada.' },
+    { key: 'money', title: 'Dinheiro', caption: 'Mais vendas atendidas, mais faturamento.' },
   ],
-  kept: ['Tempo', 'Atenção', 'Dinheiro'],
 } as const
 
 export const services = {

@@ -26,3 +26,9 @@ dist-ssr
 # variáveis locais
 .env
 .env.local
+
+# configuração local das ferramentas
+.claude/
+
+# pacotes de upload
+*.zip

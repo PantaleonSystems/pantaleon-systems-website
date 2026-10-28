@@ -22,7 +22,7 @@ src/
   lib/scroll.ts              scrollToId / scrollToTop (usa o ScrollSmoother quando ativo)
   lib/waitlist.ts            validação e envio do formulário
   components/                Layout, Smoother, Header, Footer, HashLink, GoldenLine, WaitlistForm, ScrollManager
-  components/visuals/        peças visuais animadas: ManualWindows (Problema), ServiceDiagram (O que fazemos), ProductPhone (Produto)
+  components/visuals/        peças visuais animadas: ManualWindows, ServiceDiagram, ProductPhone, VisionGraphic, CustomFlow, Glyph
   design-system/             Button (+ buttonClasses)
   sections/                  uma pasta por cena da home (Hero, Problem, Vision, Services, BeforeAfter, Method, Product, Custom)
   pages/                     HomePage, LegalPage(s), NotFoundPage

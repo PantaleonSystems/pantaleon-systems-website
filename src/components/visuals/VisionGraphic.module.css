@@ -1,91 +1,174 @@
 .stage {
+  margin-top: clamp(28px, 6vh, 64px);
   display: grid;
-  gap: clamp(40px, 7vw, 72px);
-  margin-top: clamp(16px, 4vh, 48px);
-}
-
-.chips {
-  position: relative;
-  height: clamp(190px, 30vw, 260px);
-}
-
-.chip {
-  position: absolute;
-  padding: 8px 16px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 253, 248, 0.3);
-  font-size: clamp(0.8rem, 1.5vw, 1rem);
-  color: rgba(255, 253, 248, 0.85);
-  white-space: nowrap;
-  will-change: transform;
-  /* estado final (sem JS/movimento): apagadas e riscadas */
-  opacity: 0.14;
-}
-
-.strike {
-  position: absolute;
-  left: 10px;
-  right: 10px;
-  top: 50%;
-  height: 1.5px;
-  background: var(--gold-soft);
-}
-
-/* posições soltas, levemente fora de prumo */
-.p0 { left: 2%;  top: 8%;  transform: rotate(-4deg); }
-.p1 { left: 30%; top: 0;   transform: rotate(3deg); }
-.p2 { left: 58%; top: 12%; transform: rotate(-2deg); }
-.p3 { left: 8%;  top: 44%; transform: rotate(2deg); }
-.p4 { left: 38%; top: 38%; transform: rotate(-3deg); }
-.p5 { left: 66%; top: 46%; transform: rotate(4deg); }
-.p6 { left: 0%;  top: 80%; transform: rotate(-2deg); }
-.p7 { left: 34%; top: 76%; transform: rotate(2deg); }
-.p8 { left: 62%; top: 82%; transform: rotate(-3deg); }
-
-.result {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: clamp(10px, 2vw, 24px);
   align-items: center;
-  padding: 0 4%;
 }
 
-.wire {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 18px;
+.card {
+  display: grid;
+  gap: 6px;
+  padding: clamp(18px, 2.4vw, 28px);
+  border-radius: 24px;
+  background: rgba(255, 253, 248, 0.05);
+  border: 1px solid rgba(231, 200, 121, 0.22);
+}
+
+.art {
   width: 100%;
-  height: 20px;
+  height: auto;
+  max-width: 260px;
+  margin: 0 auto 8px;
   overflow: visible;
 }
 
-.wire path {
+.title {
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  letter-spacing: -0.035em;
+  color: var(--bg-warm);
+}
+
+.caption {
+  color: rgba(255, 253, 248, 0.74);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.conn {
+  width: 48px;
+  height: 22px;
+  overflow: visible;
+}
+
+.conn path {
   fill: none;
   stroke: var(--gold-soft);
-  stroke-width: 1.6;
-  vector-effect: non-scaling-stroke;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
-.node {
-  position: relative;
-  display: grid;
-  justify-items: center;
-  gap: 14px;
-  will-change: transform;
+/* 1. tempo: estado final = 28% tarefas manuais, 72% tempo livre (medidas em px do círculo r=48) */
+.track {
+  fill: none;
+  stroke: rgba(255, 253, 248, 0.1);
+  stroke-width: 14;
 }
 
+.manual {
+  fill: none;
+  stroke: rgba(255, 253, 248, 0.38);
+  stroke-width: 14;
+  /* circunferência = 2π·48 ≈ 301,59: 28% manual */
+  stroke-dasharray: 84.45 301.59;
+}
+
+.free {
+  fill: none;
+  stroke: var(--gold-soft);
+  stroke-width: 14;
+  stroke-linecap: butt;
+  /* os 72% restantes, a partir do fim da fatia manual */
+  stroke-dasharray: 217.14 301.59;
+  stroke-dashoffset: -84.45;
+}
+
+.hub {
+  fill: var(--gold-soft);
+}
+
+.hand {
+  stroke: var(--gold-soft);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+/* 2. atenção e controle: estado final = tudo aceso e completo */
 .dot {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: var(--gold-soft);
-  box-shadow: 0 0 0 7px rgba(231, 200, 121, 0.16);
+  fill: var(--gold-soft);
 }
 
-.label {
-  font-size: clamp(1.1rem, 2.6vw, 1.75rem);
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  color: var(--bg-warm);
+.tick {
+  fill: none;
+  stroke: var(--purple-deep);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.barTrack {
+  fill: rgba(255, 253, 248, 0.1);
+}
+
+.bar {
+  fill: var(--gold-soft);
+  opacity: 0.85;
+}
+
+/* 3. dinheiro: estado final = curva completa */
+.grid {
+  fill: none;
+  stroke: rgba(255, 253, 248, 0.12);
+  stroke-width: 1;
+  stroke-dasharray: 3 5;
+}
+
+.area {
+  fill: rgba(231, 200, 121, 0.16);
+}
+
+.curve {
+  fill: none;
+  stroke: var(--gold-soft);
+  stroke-width: 3.5;
+  stroke-linecap: round;
+}
+
+.peak {
+  fill: var(--gold-soft);
+  filter: drop-shadow(0 0 6px var(--gold-soft));
+}
+
+.peakRing {
+  fill: none;
+  stroke: var(--gold-soft);
+  stroke-width: 1.5;
+  opacity: 0;
+}
+
+@media (max-width: 860px) {
+  .stage {
+    grid-template-columns: 1fr;
+    justify-items: stretch;
+  }
+
+  .conn {
+    justify-self: center;
+    transform: rotate(90deg);
+  }
+
+  /* no celular cada cartão vira uma linha: desenho à esquerda, texto à direita */
+  .card {
+    grid-template-columns: minmax(0, 40%) minmax(0, 1fr);
+    column-gap: 16px;
+    align-items: center;
+    padding: 16px;
+  }
+
+  .art {
+    grid-row: span 2;
+    max-width: none;
+    margin: 0;
+  }
+
+  .title {
+    align-self: end;
+    font-size: 1.45rem;
+  }
+
+  .caption {
+    align-self: start;
+    font-size: 0.95rem;
+  }
 }

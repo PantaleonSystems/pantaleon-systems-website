@@ -140,3 +140,18 @@ Decisões do usuário: mockup do produto **esquemático e genérico** (o produto
 - **Task 14: Sob medida com fluxo.** `components/visuals/CustomFlow.tsx`: três blocos soltos que se conectam sozinhos. Parágrafo cortado.
 - **Task 15: Linha dourada termina num nó** no fim da história.
 - **Hero:** aguardando escolha do usuário entre opções de composição tipográfica.
+
+## Adendo 2026-10-28: hero com a logo como destino da linha
+
+- A linha final passa a **terminar na logo**; os quatro nós ganham nomes (Planilha, Mensagens, Cadastros, Pedidos), para a imagem se explicar sozinha.
+- Logo em HTML sobre o SVG (posição em % do viewBox): entrada com escala + anel dourado desenhado (DrawSVG); hover/toque com tilt 3D que segue o cursor (`quickTo`), brilho que segue o mouse, ondas douradas e ponto em órbita (MotionPath); o brilho raro da linha chega na logo e ela pulsa.
+- Duas composições (larga e vertical) em `src/data/hero.ts`, escolhidas por `useMediaQuery('(max-width: 700px)')`; no celular a arte fica entre o título e o texto de apoio.
+
+## Adendo 2026-10-28 (2): Antes/Depois guiado
+
+- Dois cartões de alto contraste: **Antes** (claro, ações manuais com ícone + palavra, riscadas) e **Depois** (roxo escuro): evento "Nova venda" dispara faíscas por linhas douradas que energizam Planilha (linha nova), Estoque (barra desce), Nota (visto) e Equipe (mensagem). Toque no evento repete a simulação.
+- Geometria do diagrama larga e vertical (celular), escolhida por `useMediaQuery`; sem pin, sem scrub. Estado final no HTML/CSS para movimento reduzido.
+
+## Adendo 2026-10-28 (3): Visão como cadeia de causa e efeito
+
+`VisionGraphic` vira três cartões ligados por setas: **Tempo** (anel: tarefas manuais encolhem, tempo livre cresce, relógio gira), **Atenção** (painel de processos que acendem e ganham visto) e **Dinheiro** (curva de faturamento subindo). Animação única ao entrar (sem scrub), estado final no CSS para movimento reduzido. Sem números inventados.

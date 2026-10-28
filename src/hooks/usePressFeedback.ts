@@ -14,7 +14,13 @@ export function usePressFeedback(scope: RefObject<HTMLElement | null>) {
       mm.add(NO_PREF, () => {
         const cleanups: Array<() => void> = []
         scope.current?.querySelectorAll<HTMLElement>('[data-press]').forEach((el) => {
-          const scaleTo = gsap.quickTo(el, 'scale', { duration: DUR.fast / 2, ease: EASE })
+          // quickTo não aplica 'scale' (alias): usa-se scaleX/scaleY
+          const scx = gsap.quickTo(el, 'scaleX', { duration: DUR.fast / 2, ease: EASE })
+          const scy = gsap.quickTo(el, 'scaleY', { duration: DUR.fast / 2, ease: EASE })
+          const scaleTo = (value: number) => {
+            scx(value)
+            scy(value)
+          }
           const down = () => scaleTo(0.95)
           const up = () => scaleTo(1)
           el.addEventListener('pointerdown', down)

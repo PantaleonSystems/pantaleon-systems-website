@@ -1,18 +1,28 @@
 export const beforeAfter = {
   eyebrow: 'Antes e depois',
   title: 'Mesmo trabalho. Dois caminhos.',
-  manualLabel: 'Na mão',
-  autoLabel: 'Automático',
+  manualLabel: 'Antes · na mão',
+  autoLabel: 'Depois · automático',
+  /** ações que alguém repete toda vez que uma venda chega */
   manualSteps: [
-    'Chega uma venda',
-    'Copiar os dados do cliente',
-    'Colar na planilha',
-    'Baixar o item do estoque',
-    'Emitir a nota',
-    'Avisar a equipe',
+    { word: 'Chega a venda', icon: 'cart' },
+    { word: 'Copiar os dados', icon: 'copy' },
+    { word: 'Colar na planilha', icon: 'clipboard' },
+    { word: 'Baixar o estoque', icon: 'box' },
+    { word: 'Emitir a nota', icon: 'doc' },
+    { word: 'Avisar a equipe', icon: 'chat' },
   ],
-  autoStep: 'Chegou uma venda.',
-  autoResult: 'Planilha, estoque e nota se atualizam sozinhos.',
+  event: 'Nova venda',
+  eventHint: 'Toque na venda para simular outra',
+  targets: [
+    { word: 'Planilha', icon: 'sheet' },
+    { word: 'Estoque', icon: 'box' },
+    { word: 'Nota', icon: 'doc' },
+    { word: 'Equipe', icon: 'chat' },
+  ],
+  caption: 'Chegou uma venda. O resto acontece sozinho.',
+  artLabel:
+    'Esquema: à esquerda, seis tarefas manuais riscadas; à direita, uma nova venda que dispara sozinha a planilha, o estoque, a nota e a equipe.',
 } as const
 
 export const method = {
